@@ -1,0 +1,31 @@
+{
+  "name": "vitrine",
+  "version": "0.0.1",
+  "description": "Vitrine de recomendação de produtos",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lasdeparq/vitrine.git"
+  },
+  "author": "André Lacerda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lasdeparq/vitrine/issues"
+  },
+  "homepage": "https://github.com/lasdeparq/vitrine#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5"
+  }
+}
