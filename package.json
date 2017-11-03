@@ -4,6 +4,7 @@
   "description": "Vitrine de recomendação de produtos",
   "main": "index.html",
   "scripts": {
+    "serve": "gulp serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +25,7 @@
     "gulp-jshint": "^2.0.4",
     "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "jshint": "^2.9.5"
   }

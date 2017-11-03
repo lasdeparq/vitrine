@@ -1,7 +1,7 @@
 // Aqui nós carregamos o gulp e os plugins através da função `require` do nodejs
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -18,7 +18,8 @@ gulp.task('clean', function(){
 });
 
 gulp.task('sass', function() {
-    return sass('src/scss/*.scss')
+    return gulp.src('src/scss/*.scss')
+      .pipe(sass())
       .pipe(gulp.dest('dist/css'))
       .pipe(reload({ stream:true }));
 });
