@@ -1,17 +1,18 @@
 // Aqui nós carregamos o gulp e os plugins através da função `require` do nodejs
-var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var del = require('del');
-var livereload = require('gulp-livereload');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
+let gulp = require('gulp');
+let jshint = require('gulp-jshint');
+let sass = require('gulp-sass');
+let babel = require('gulp-babel');
+let uglify = require('gulp-uglify');
+let concat = require('gulp-concat');
+let rename = require('gulp-rename');
+let del = require('del');
+let livereload = require('gulp-livereload');
+let browserSync = require('browser-sync');
+let reload = browserSync.reload;
 
 // Definimos o diretorio dos arquivos para evitar repetição futuramente
-var files = "./src/**.js";
+var files = "src/js/*.js";
 
 gulp.task('clean', function(){
     return del('dist/**', {force:true});
@@ -29,7 +30,7 @@ gulp.task('lint', function() {
     // Aqui carregamos os arquivos que a gente quer rodar as tarefas com o `gulp.src`
     // E logo depois usamos o `pipe` para rodar a tarefa `jshint`
     gulp.src(files)
-    .pipe(jshint())
+    .pipe(jshint({ esversion: 6}))
     .pipe(jshint.reporter('default'));
 });
 
@@ -42,8 +43,14 @@ gulp.task('dist', function() {
     // E pra terminar usamos o `gulp.dest` para colocar os arquivos concatenados e minificados na pasta build/
     gulp.src(files)
     .pipe(concat('./dist'))
+    .pipe(babel({
+        presets: ['env']
+    }))
     .pipe(rename('/js/index.min.js'))
-    .pipe(uglify())
+    .pipe(uglify().on('error', 
+            function(e){
+                console.log(e);
+            }))
     .pipe(gulp.dest('./dist'))
 });
 
