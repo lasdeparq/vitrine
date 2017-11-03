@@ -88,9 +88,9 @@ video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
+
 
 
 /* HTML5 display-role reset for older browsers */
@@ -111,6 +111,9 @@ section {
 
 body {
     line-height: 1;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 ol,
