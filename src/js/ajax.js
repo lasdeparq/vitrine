@@ -1,6 +1,6 @@
 function ajaxGet(url) {
     return new Promise(function(resolve, reject) {
-        var req = new XMLHttpRequest();
+        let req = new XMLHttpRequest();
         req.open("GET", url);
         req.onload = function() {
             if (req.status === 200) {
