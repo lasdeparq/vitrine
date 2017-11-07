@@ -4,7 +4,8 @@
   "description": "Vitrine de recomendação de produtos",
   "main": "index.html",
   "scripts": {
-    "serve": "gulp serve",
+    "server": "gulp sass & gulp dist & gulp server",
+    "build": "gulp dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

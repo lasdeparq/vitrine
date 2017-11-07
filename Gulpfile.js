@@ -47,15 +47,15 @@ gulp.task('dist', function() {
         presets: ['env']
     }))
     .pipe(rename('/js/index.min.js'))
-    .pipe(uglify().on('error', 
-            function(e){
-                console.log(e);
-            }))
+    // .pipe(uglify().on('error', 
+    //         function(e){
+    //             console.log(e);
+    //         }))
     .pipe(gulp.dest('./dist'))
 });
 
 // watch files for changes and reload
-gulp.task('serve', function() {
+gulp.task('server', function() {
     browserSync({
       server: {
         baseDir: './'

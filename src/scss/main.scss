@@ -1,10 +1,18 @@
 @import "reset";
 @import "variables";
 @import "typo";
+@import "loading";
 @import "item";
+
+.hidden {
+    display:none;
+}
+
 .items {
-    width: 100%;
+    width: 500px;
     padding: 10px;
+// display: none;
+border: 1px solid black;
     &__reference {
         border-right: 1px solid #ebe9e9;
         display: inline-block;
