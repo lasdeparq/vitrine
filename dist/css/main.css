@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: sans-serif; }
+
+.loading {
+  display: block;
+  margin: auto;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #cdcdcd;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+a .item, a:visited .item {
+  color: black; }
+
+.item {
+  width: 180px;
+  font-size: 0.8em;
+  padding: 5px;
+  background: white;
+  display: inline-block; }
+  .item__image {
+    border: 2px solid transparent;
+    padding: 10px;
+    background: white;
+    text-align: center; }
+    .item__image img {
+      max-width: 100%; }
+  .item__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 3em;
+    margin-top: 5px; }
+  .item__oldPrice {
+    margin-top: 5px; }
+  .item__price {
+    color: #aa0000;
+    margin-top: 5px; }
+    .item__price span {
+      font-size: 1.3em;
+      font-weight: bold; }
+    .item__price__conditions {
+      margin-top: 5px; }
+  .item:hover {
+    cursor: pointer;
+    background: #c3dbff;
+    background: -webkit-linear-gradient(#c3dbff, white);
+    background: -o-linear-gradient(#c3dbff, white);
+    background: -moz-linear-gradient(#c3dbff, white);
+    background: linear-gradient(#c3dbff, white); }
+    .item:hover .item__image {
+      border-color: #aaccff; }
+    .item:hover .item__title {
+      color: #aa0000; }
+
+.hidden {
+  display: none; }
+
+.items {
+  width: 760px;
+  height: 260px;
+  padding: 10px; }
+  .items__reference {
+    height: inherit;
+    border-right: 1px solid #ebe9e9;
+    display: inline-block; }
+  .items__recommended {
+    position: absolute;
+    height: inherit;
+    width: 570px;
+    display: inline-block;
+    overflow: hidden; }
+    .items__recommended__previous, .items__recommended__next {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.85);
+      width: 25px;
+      height: 260px;
+      box-shadow: 5px 5px 20px 15px rgba(255, 255, 255, 0.85); }
+      .items__recommended__previous:hover, .items__recommended__next:hover {
+        cursor: pointer; }
+        .items__recommended__previous:hover i, .items__recommended__next:hover i {
+          color: #6f6fa0; }
+      .items__recommended__previous i, .items__recommended__next i {
+        position: absolute;
+        color: #2f2f47;
+        top: calc(50% - 24px); }
+      .items__recommended__previous .disabled, .items__recommended__next .disabled {
+        color: lightgray; }
+    .items__recommended__next {
+      right: 0; }
+  .items__recommended:hover .items__recommended__previous, .items__recommended:hover .items__recommended__next {
+    display: block; }
+  .items__recommended:hover .disabled {
+    color: lightgray; }
