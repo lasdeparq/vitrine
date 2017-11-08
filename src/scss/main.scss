@@ -5,19 +5,67 @@
 @import "item";
 
 .hidden {
-    display:none;
+    display: none;
 }
 
 .items {
-    width: 500px;
+    width: 760px;
+    height: $items-height;
     padding: 10px;
-// display: none;
-border: 1px solid black;
+
     &__reference {
+        height: inherit;
         border-right: 1px solid #ebe9e9;
         display: inline-block;
     }
+
     &__recommended {
+        position: absolute;
+        height: inherit;
+        width: 570px;
         display: inline-block;
+        overflow: hidden;
+
+        &__previous, &__next {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.85);
+            width: 25px;
+            height: $items-height;
+            box-shadow: 5px 5px 20px 15px rgba(255, 255, 255, 0.85);
+
+            &:hover {
+                cursor: pointer;
+
+                i {
+                    color: lighten(#2f2f47, 30%);
+                }
+            }
+
+            i {
+                position: absolute;
+                color: #2f2f47;
+                top: calc(50% - 24px);
+            }
+
+            .disabled {
+                color: lightgray;
+            }
+        }
+
+        &__next {
+            right: 0;
+        }
+    }
+
+    &__recommended:hover {
+        .items__recommended__previous, .items__recommended__next {
+            display: block;
+        }
+
+        .disabled {
+            color: lightgray;
+        }
     }
 }
